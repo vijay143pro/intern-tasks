@@ -1,0 +1,99 @@
+*{
+    padding:0px;
+    margin:0px;
+}
+body {
+background-color:skyblue;  
+}
+.menu{
+    background-color:bisque;
+    color: black;
+    text-align:center;
+}
+.img1{
+    position: absolute;
+    left: 20px;
+    top: 15px;
+}
+.img2{
+    position: absolute;
+    left: 90%;
+    top: 20px;
+}
+.menu ul{
+    display:inline-flex;
+    list-style:none;
+}
+.menu ul li{
+    display: block;
+    padding:20px;
+    padding-left:25px;
+}
+.menu ul li:hover{
+    background-color:#006688;
+    border-radius:5px;
+}
+.submenu1{
+    display:none;
+}
+.menu ul li:hover .submenu1{
+    display:block ;
+    position:absolute ;
+    background-color:rgb(149, 149, 183);
+    margin-top:5px;
+    margin-left:5px;
+}
+.menu ul li:hover .submenu1 ul{
+    display:block;
+}
+.menu a{
+    text-decoration: none;    
+}
+.container{
+    background-color: rgb(172, 255, 255);
+    height: 70vh;
+    font-size: 20px;
+}
+.img-content{
+    position: absolute;
+    float: left;
+    width: 50%;
+}
+.text-content{
+    position: absolute;
+    top: 35%;
+    width: 50%;
+    left: 50%;
+    text-align: center;
+}
+.content-topic{
+    letter-spacing: 2px;
+    padding-bottom: 15px;
+}
+.text{
+    padding-right: 20px;
+    text-align: justify;
+}
+.container2{
+    background-color: rgb(174, 137, 176);
+    height: 61vh;
+    font-size: 20px;
+}
+.img-content2{
+    position: absolute;
+    float: left;
+    width: 50%;
+}
+.text-content2{
+    color: aliceblue;
+    position: absolute;
+    top: 100%;
+    width: 50%;
+    left: 50%;
+    text-align: center;
+}
+
+
+
+
+
