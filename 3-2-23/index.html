@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="getval" onchange="change()">
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="green">Green</option>
+    </select>
+    <p id="display"></p>
+</body>
+<script>
+    function change(){
+        x=document.getElementById("getval").value;
+        var text=document.getElementById("display");
+        text.innerHTML="This is "+x
+        if(x=="red"){
+            text.style.color="red";
+        }
+        else if(x=="blue"){
+            text.style.color="blue"
+        }
+        else{
+            text.style.color="green"
+        }
+    }
+</script>
+</html>
