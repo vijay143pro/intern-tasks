@@ -13,133 +13,131 @@
     <form id="form1">
         <h1>Form validation</h1>
         <label for="name">Name</label><br>
-        <input autocomplete="off" type="text" id="name"><span id="nam_error"></span><br><br>
+        <input autocomplete="off" type="text" id="name"><br><span id="nam_error"></span><br><br>
         <label for="age">Age</label><br>
-        <input type="number" autocomplete="off" id="age"><span id="age_error"></span><br><br>
+        <input type="number" autocomplete="off" id="age"><br><span id="age_error"></span><br><br>
         <label for="mobile">Mobile</label><br>
-        <input type="tel" autocomplete="off" id="mobile" minlength="6" maxlength="10"><span id="mobile_error"></span><br><br>
+        <input type="tel" autocomplete="off" id="mobile" minlength="6" maxlength="10"><br><span
+            id="mobile_error"></span><br><br>
         <label for="email">email</label><br>
-        <input type="email" autocomplete="off" id="email"><span id="mail_error"></span><br><br>
+        <input type="email" autocomplete="off" id="email"><br><span id="mail_error"></span><br><br>
         <label for="pass">Password</label><br>
-        <input type="password" autocomplete="off" id="pass"><span id="pass_error"></span><br><br>
+        <input type="password" autocomplete="off" id="pass"><br><span id="pass_error"></span><br><br>
         <label for="repass">Re-Enter password</label><br>
-        <input type="password" autocomplete="off" id="repass"><span id="repass_error"></span><br><br>
-        <select id="dept"> 
-            <option value="select">Select</option> 
+        <input type="password" autocomplete="off" id="repass"><br><span id="repass_error"></span><br><br>
+        <select id="dept">
+            <option value="select">Select</option>
             <option value="cse">CSE</option>
             <option value="ece">ECE</option>
             <option value="eee">EEE</option>
         </select><br><br>
-        <label for="male">Male</label>
-        <input type="radio" name="male">
-        <label for="female">Female</label>
-        <input type="radio" name="female"><br><br>
-
+        <textarea placeholder="Enter address"></textarea><br><br>
         <button id="btn" onclick="fsubmit()">Submit</button>
     </form>
     <script>
         var form = document.getElementById("form1").addEventListener("click", function (e) {
             e.preventDefault();
         })
-        function fsubmit()
-         {
+        function fsubmit() {
             //variable declaration
             var name = document.getElementById("name").value;
-            var age=document.getElementById("age").value;
-            var mobile=document.getElementById("mobile").value
-            var email=document.getElementById("email").value
-            var pass=document.getElementById("pass").value
-            var repass=document.getElementById("repass").value
-            var regex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/
-            var email_regex=/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-z\-0-9]+\.)+[a-z]{2,}))$/;
-            var pass_regex=/^[A-Za-z0-9@]{5,20}$/
-
-            //name validation
-            if (name === "") {
-                document.getElementById("nam_error").innerHTML = "Field is empty";
-                document.getElementById("nam_error").style.color = "red"
-                document.getElementById("name").style.border = "1px solid red"
-            }
-            else if (!regex.test(name)) {
-                document.getElementById("nam_error").innerHTML = "Enter a Valid Name";
-                document.getElementById("nam_error").style.color = "red";
-                document.getElementById("name").style.border = "1px solid red"
-            }
-            else {
-                document.getElementById("nam_error").innerHTML = "";
-                document.getElementById("name").style.border = "1px solid lime";
-            }
-            //age validation
-            if(age===""){
-        document.getElementById("age_error").innerHTML="Field is empty";
-        document.getElementById("age_error").style.color="red"
-        document.getElementById("age").style.border="1px solid red"
-       }
-       else if(age<=0){
-        document.getElementById("age_error").innerHTML="Enter valid age"
+            var age = document.getElementById("age").value;
+            var mobile = document.getElementById("mobile").value
+            var email = document.getElementById("email").value
+            var pass = document.getElementById("pass").value
+            var repass = document.getElementById("repass").value
         }
-        else{
-            document.getElementById("age_error").innerHTML=""
-            document.getElementById("age").style.border="1px solid lime"
+        console.log(dept)
+        var regex = /^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$/
+        var email_regex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-z\-0-9]+\.)+[a-z]{2,}))$/;
+        var pass_regex = /^[A-Za-z0-9@]{5,20}$/
+
+        //name validation
+        if (name === "") {
+            document.getElementById("nam_error").innerHTML = "Field is empty";
+            document.getElementById("nam_error").style.color = "red"
+            document.getElementById("name").style.border = "1px solid red"
+        }
+        else if (!regex.test(name)) {
+            document.getElementById("nam_error").innerHTML = "Enter a Valid Name";
+            document.getElementById("nam_error").style.color = "red";
+            document.getElementById("name").style.border = "1px solid red"
+        }
+        else {
+            document.getElementById("nam_error").innerHTML = "";
+            document.getElementById("name").style.border = "1px solid lime";
+        }
+        //age validation
+        if (age === "") {
+            document.getElementById("age_error").innerHTML = "Field is empty";
+            document.getElementById("age_error").style.color = "red"
+            document.getElementById("age").style.border = "1px solid red"
+        }
+        else if (age <= 0) {
+            document.getElementById("age_error").style.color = "red"
+            document.getElementById("age_error").innerHTML = "Enter valid age"
+        }
+        else {
+            document.getElementById("age_error").innerHTML = ""
+            document.getElementById("age").style.border = "1px solid lime"
         }
         //mobile validation
-        if(mobile===""){
-                document.getElementById("mobile_error").innerHTML = "Field is empty";
-                document.getElementById("mobile_error").style.color = "red"
-                document.getElementById("mobile").style.border = "1px solid red"
+        if (mobile === "") {
+            document.getElementById("mobile_error").innerHTML = "Field is empty";
+            document.getElementById("mobile_error").style.color = "red"
+            document.getElementById("mobile").style.border = "1px solid red"
         }
-        else{
-            document.getElementById("mobile_error").innerHTML=""
-            document.getElementById("mobile").style.border="1px solid lime"
+        else {
+            document.getElementById("mobile_error").innerHTML = ""
+            document.getElementById("mobile").style.border = "1px solid lime"
         }
         //email validation
         if (email === "") {
-                document.getElementById("mail_error").innerHTML = "Field is empty";
-                document.getElementById("mail_error").style.color = "red"
-                document.getElementById("email").style.border = "1px solid red"
-            }
-            else if(!email_regex.test(email)){
-                document.getElementById("mail_error").innerHTML = "Enter a Valid email";
-                document.getElementById("mail_error").style.color = "red";
-                document.getElementById("email").style.border = "1px solid red"
-            }
-            else{
-                document.getElementById("mail_error").innerHTML=""
-                document.getElementById("email").style.border="1px solid lime"
-            }
-            // password validation
-             
-        if ( pass=== "") {
-                document.getElementById("pass_error").innerHTML = "Field is empty";
-                document.getElementById("pass_error").style.color = "red"
-                document.getElementById("pass").style.border = "1px solid red"
-            }
-            else if(!pass_regex.test(pass)){
-                document.getElementById("pass_error").innerHTML = "Enter a Valid password";
-                document.getElementById("pass_error").style.color = "red";
-                document.getElementById("pass").style.border = "1px solid red"
-            }
-            
-            else{
-                document.getElementById("pass_error").innerHTML=""
-                document.getElementById("pass").style.border="1px solid lime"
-            }
-            //re enter password
-            if ( repass=== "") {
-                document.getElementById("repass_error").innerHTML = "Field is empty";
-                document.getElementById("repass_error").style.color = "red"
-                document.getElementById("repass").style.border = "1px solid red"
-            }
-            else if(repass !=pass){
-                document.getElementById("repass_error").innerHTML = "Enter a Valid password";
-                document.getElementById("repass_error").style.color = "red";
-                document.getElementById("repass").style.border = "1px solid red"
-            }
-            else{
-                document.getElementById("repass_error").innerHTML=""
-                document.getElementById("repass").style.border="1px solid lime"
-            }
-    }
+            document.getElementById("mail_error").innerHTML = "Field is empty";
+            document.getElementById("mail_error").style.color = "red"
+            document.getElementById("email").style.border = "1px solid red"
+        }
+        else if (!email_regex.test(email)) {
+            document.getElementById("mail_error").innerHTML = "Enter a Valid email";
+            document.getElementById("mail_error").style.color = "red";
+            document.getElementById("email").style.border = "1px solid red"
+        }
+        else {
+            document.getElementById("mail_error").innerHTML = ""
+            document.getElementById("email").style.border = "1px solid lime"
+        }
+        // password validation
+
+        if (pass === "") {
+            document.getElementById("pass_error").innerHTML = "Field is empty";
+            document.getElementById("pass_error").style.color = "red"
+            document.getElementById("pass").style.border = "1px solid red"
+        }
+        else if (!pass_regex.test(pass)) {
+            document.getElementById("pass_error").innerHTML = "Enter a Valid password";
+            document.getElementById("pass_error").style.color = "red";
+            document.getElementById("pass").style.border = "1px solid red"
+        }
+
+        else {
+            document.getElementById("pass_error").innerHTML = ""
+            document.getElementById("pass").style.border = "1px solid lime"
+        }
+        //re enter password
+        if (repass === "") {
+            document.getElementById("repass_error").innerHTML = "Field is empty";
+            document.getElementById("repass_error").style.color = "red"
+            document.getElementById("repass").style.border = "1px solid red"
+        }
+        else if (repass != pass) {
+            document.getElementById("repass_error").innerHTML = "Enter a Valid password";
+            document.getElementById("repass_error").style.color = "red";
+            document.getElementById("repass").style.border = "1px solid red"
+        }
+        else {
+            document.getElementById("repass_error").innerHTML = ""
+            document.getElementById("repass").style.border = "1px solid lime"
+        }
     </script>
 </body>
 
