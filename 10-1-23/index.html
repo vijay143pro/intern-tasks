@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>array</title>
+  </head>
+  <body>
+         <label for="get">input box:</label>
+      <input type="text" id="get" name="get" value="" />
+      <button onclick="addElement()">Add</button>
+      <button onclick="deleteElement()" >Delete</button>
+      
+      <p id="result"></p>
+    
+    <script>
+        var arr = [];
+      function addElement() {
+        var input = document.getElementById("get").value; //apple
+        
+        arr.push(input); //arr.push(apple)
+        
+        var display='';
+        for (var i = 0; i < arr.length; i++) {
+          display += [i+1] +"." + arr[i] + "<button onclick='dlt("+ i +")'> Delete </button>" + " " + "<br>";
+        }
+        document.getElementById("result").innerHTML = display; //apple
+      }
+        function dlt(index){
+          var input = document.getElementById("get").value; //apple
+          var remove =""; 
+        arr.splice(index,1); 
+        for (var i = 0; i < arr.length; i++) {
+          remove += [i+1] +"." + arr[i] + "<button onclick='dlt("+ i +")'> Delete </button>" + "<br>";
+        }
+        document.getElementById("result").innerHTML = remove; //apple
+
+}
+        
+       
+      
+      function deleteElement(){
+        var input = document.getElementById("get").value; //apple
+        var remove =""; 
+        arr.shift(input); 
+        for (var i = 0; i < arr.length; i++) {
+          remove += [i+1] +"." + arr[i] + '<button onclick="(dlt'+i+')"> Delete </button>' + "<br>";
+        }
+        document.getElementById("result").innerHTML = remove; //apple
+
+      }
+     
+    </script>
+  </body>
+</html>
